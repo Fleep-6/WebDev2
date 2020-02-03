@@ -20,7 +20,7 @@ http.createServer(function(req, res) {
     path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase();
     switch (path) {
         case '':
-            serveStaticFile(res, '/home/student/Documents/WebDev2', 'text/html');
+            serveStaticFile(res, '/WebDev2/Home.html', 'text/html');
             break;
         case '/about':
             serveStaticFile(res, '/public/about.html', 'text/html');
