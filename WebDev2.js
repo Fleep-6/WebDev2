@@ -6,18 +6,18 @@ http.createServer(function(req, res) {
     path = req.url.replace(/\/?(?:\?.*)?$/, '').toLowerCase();
     switch (path) {
         case '':
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end('Homepage');
+            res.writeHead(200, { 'Content-Type': 'html' });
+            res.end("<h1> Welcome to the HomePage </h1>");
             break;
         case '/about':
-            res.writeHead(200, { 'Content-Type': 'text/plain' });
-            res.end('About');
+            res.writeHead(200, { 'Content-Type': 'html' });
+            res.end('<h2>This is the about page</h2>');
             break;
         default:
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Not Found');
+            res.writeHead(404, { 'Content-Type': 'html' });
+            res.end('<h3>This is an error page</h3>');
             break;
     }
-}).listen(7000);
+}).listen(8000);
 
-console.log('Server started on localhost:7000; press Ctrl-C to terminate....');
+console.log('Server started on localhost:8000; press Ctrl-C to terminate....');
