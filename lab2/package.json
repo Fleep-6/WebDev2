@@ -1,0 +1,23 @@
+{
+  "name": "webdev2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Static_Resources.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fleep-6/WebDev2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fleep-6/WebDev2/issues"
+  },
+  "homepage": "https://github.com/Fleep-6/WebDev2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express3-handlebars": "^0.5.2"
+  }
+}
