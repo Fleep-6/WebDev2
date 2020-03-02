@@ -10,6 +10,17 @@
     <div class='panel-heading'>{{subject}}</div>
     <div class='panel-heading'>{{review}}</div>
 
+    {{#entries}}
+    <div class="panel panel-default">
+          <div class="panel-heading">
+              {{subject}}
+          </div>
+          <div class="panel-body">
+              {{review}}
+          </div>
+     </div>
+{{/entries}}
+
 </body>
 
 </html>
