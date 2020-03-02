@@ -16,22 +16,9 @@ app.get("/", function(request, response) {
     response.send('<h1>Landing Page</h1>');
 });
 
-app.get("/page", function(request, response) {
+app.get("/guests", function(request, response) {
     response.render("page", {
-        'title': 'New Guest Book',
-        'entries': [{
-                'subject': 'good day out',
-                'review': 'We had a really good time visiting the museum.'
-            },
-            {
-                'subject': 'Liked the exhibition',
-                'review': 'Good to see the Glasgow Boys again.'
-            },
-            {
-                'subject': 'Magical few hours',
-                'review': 'Magnificant looking building.'
-            }
-        ]
+        'title': 'New Guest Book'
     });
 });
 
