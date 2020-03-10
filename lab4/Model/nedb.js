@@ -1,10 +1,5 @@
 const Datastore = require('nedb');
 
-var nedb = new Datastore({
-    filename: 'db.db',
-    autoload: true
-});
-
 class DAO {
     constructor(dbFilePath) {
         //run database as a file
@@ -16,11 +11,10 @@ class DAO {
             this.db = new Datastore();
         }
     }
-
     init() {
         this.db.insert({
             guestbookEntryField: 'guestbookEntryField',
-            title: 'like',
+            comment: 'like',
             content: 'nice',
             published: '17/02/2020'
         });
@@ -39,7 +33,5 @@ class DAO {
             });
         })
     }
-
-
 }
 module.exports = DAO;

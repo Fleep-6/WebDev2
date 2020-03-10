@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{>header}}
+</head>
+<body>
+    <h1>Guest Book</h1>
+    <div>{{subject}}</div> 
+    <div>{{review}}</div> 
+    <div>
+    {{#visitors}}
+        <div>{{name}}</div>
+    {{/visitors}}
+    </div>   
+
+    <h1>Guest Book DB</h1>
+    {{#entries}}
+        <div>{{comment}}</div>
+        <div>{{subject}}</div>
+        <div>{{content}}</div>
+        <div>{{review}}</div><hr>
+    {{/entries}}
+</body>
+</html>

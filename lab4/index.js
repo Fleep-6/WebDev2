@@ -8,9 +8,11 @@ var app = express();
 
 //DB Stuff
 
-var DAO = require('./Model/nedb');
+var DAO = require('./Model/nedb.js');
 var dbFile = 'database.nedb.db';
 let dao = new DAO(dbFile);
+var dbFilePath = "./Model/database.nedb.db";
+var List;
 dao.init();
 
 
@@ -26,21 +28,34 @@ app.get("/", function(request, response) {
     response.send('<h1>Landing Page</h1>');
 });
 
-app.get("/guests", function(request, response) {
-    response.render("entries", {
-        "entries": list
-    });
-});
-
-app.get("/", function(request, response) {
+app.get("/guestbook", function(request, response) {
     dao.all()
         .then((list) => {
+            console.log("list content:");
             console.log(list);
+            List = list;
         })
         .catch((err) => {
             console.log('Error: ')
             console.log(JSON.stringify(err))
         });
+    response.render("guestbook", {
+        'title': 'New Guest Book',
+        'subject': 'Good day out',
+        'review': 'We had a really good time visiting the museum.',
+        'visitors': [
+            { 'name': 'Peter' },
+            { 'name': 'Adam' },
+            { 'name': 'Bella' }
+        ],
+        "entries": [
+            { 'comment': List[0].comment },
+            { 'subject': List[0].subject },
+            { 'content': List[0].content },
+            { 'review': List[0].review },
+        ]
+    });
+
 });
 
 
